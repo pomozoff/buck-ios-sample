@@ -6,7 +6,10 @@ apple_resource(
 
 apple_binary(
     name = 'AppBinary',
-    srcs = ['App/App.m'],
+    srcs = [
+        'App/App.m',
+        'App/Empty.swift',
+    ],
     headers = ['App/App.h'],
     frameworks = [
         '$SDKROOT/System/Library/Frameworks/Foundation.framework',
@@ -26,12 +29,14 @@ apple_bundle(
 apple_test(
     name = 'AppTest',
     test_host_app = ':App',
-    extension = 'xctest',
-    srcs = ['test/AppTest.m'],
+    srcs = [
+        'Test/AppTest.m',
+        'Test/Empty.swift',
+    ],
     info_plist = 'Test/AppTest.plist',
     frameworks = [
         '$SDKROOT/System/Library/Frameworks/Foundation.framework',
-        '$PLATFORM_DIR/Developer/Library/Frameworks/XCTest.framework',
         '$SDKROOT/System/Library/Frameworks/UIKit.framework',
+        '$PLATFORM_DIR/Developer/Library/Frameworks/XCTest.framework',
     ],
 )
