@@ -29,6 +29,7 @@ apple_bundle(
 apple_test(
     name = 'AppTest',
     test_host_app = ':App',
+    deps = [':App'],
     srcs = [
         'Test/AppTest.m',
         'Test/Empty.swift',
